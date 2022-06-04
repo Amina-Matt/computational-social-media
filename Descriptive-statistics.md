@@ -132,41 +132,11 @@ zipfile.ZipFile(PATH).namelist()
 ## 1. Loading  data
 
 
-```python
-# # # # the zip archive contains multiple files
 
-# all_zips = zipfile.ZipFile(PATH)
 
-# #df = pd.concat(
-# #    [pd.read_csv(zipfile.ZipFile(PATH).open(i)) for i in zipfile.ZipFile(PATH).namelist()],
-# #    ignore_index=True
-# #)
-# df = pd.DataFrame()
-# index = 0 
-# for i in all_zips.namelist():
-#     if (i.startswith('Ukraine')):
-#         print(f'Loading {i}')
-#         tmp = pd.read_csv(zipfile.ZipFile(PATH).open(i),compression='gzip')  # add options index_col=0,encoding='utf-8', quoting=csv.QUOTE_ALL
-#         df = pd.concat([df,tmp])
-# #     index = index+1
-# #     if (index==22) :
-# #         break
-```
 
 ### DATA
 
-
-```python
-# pickle the df to be used later 
-#df.to_pickle(gen_data_PATH+'FEB_MARCH_dataframe.pkl')
-#df_feb_march_ref = pd.read_pickle(gen_data_PATH+'feb_march_en_refugee_raw.pkl')
-df_april= pd.read_pickle(gen_data_PATH+'Generated_Dataapril_dataframe.pkl.pkl')
-```
-
-
-```python
-len(df_feb_march_ref)
-```
 
 
 
@@ -178,42 +148,24 @@ len(df_feb_march_ref)
 ## Catenate February, March and April months
 
 
-```python
-df_feb_march = pd.read_pickle(gen_data_PATH+'FEB_MARCH_dataframe.pkl')
-#df_april = pd.read_pickle(gen_data_PATH+'Generated_Dataapril_dataframe.pkl')#
-```
-
-
-```python
-#df = pd.concat([df_feb_march,df_april])
-```
 
 ### Rows
 
 
-```python
-print(f'The FEBRUARY MARCH dataset contains {len(df_feb_march)} tweet entries')
-```
+
 
     The FEBRUARY MARCH dataset contains 15583279 tweet entries
 
 
 
-```python
-df = df_feb_march
-```
 
 
-```python
-print(f'The APRIL dataset contains {len(df_april)} tweet entries')
-```
+
 
 ### Columns
 
 
-```python
-df.columns.to_list()
-```
+
 
 
 
@@ -242,14 +194,6 @@ df.columns.to_list()
 ### Sample
 
 
-```python
-
-```
-
-
-```python
-df[['location','tweetid','tweetcreatedts','text','hashtags','language']].sample(5)
-```
 
 
     ---------------------------------------------------------------------------
